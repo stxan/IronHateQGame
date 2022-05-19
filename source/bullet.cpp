@@ -33,7 +33,7 @@ Bullet::Bullet(int direction) {
 void Bullet::move() {
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0, n = colliding_items.size(); i < n; i++) {
-        if (typeid(*(colliding_items[i])) == typeid(Enemy)) {
+        if (dynamic_cast<Enemy *>(colliding_items[i])) {
             game->score->increase();
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
