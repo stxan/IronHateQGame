@@ -25,23 +25,33 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-    bullet.cpp \
-    enemy.cpp \
-    game.cpp \
-    player.cpp \
-    health.cpp \
-    score.cpp \
-    points.cpp
+    source/bullet.cpp \
+    source/enemy.cpp \
+    source/game.cpp \
+    source/health.cpp \
+    source/main.cpp \
+    source/player.cpp \
+    source/points.cpp \
+    source/score.cpp
 
 HEADERS += \
-    bullet.h \
-    enemy.h \
-    game.h \
-    player.h \
-    health.h \
-    score.h \
-    points.h
+    headers/bullet.h \
+    headers/enemy.h \
+    headers/game.h \
+    headers/health.h \
+    headers/player.h \
+    headers/points.h \
+    headers/score.h
 
 RESOURCES += \
     resource.qrc
+
+DISTFILES += \
+    mp3/background \
+    mp3/eatsound.mp3 \
+    mp3/shoot.mp3 \
+    mp3/spawn.mp3 \
+    png/backp.png \
+    png/bullet.png \
+    png/enemy.png \
+    png/player.png

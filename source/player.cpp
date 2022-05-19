@@ -1,11 +1,11 @@
-#include "player.h"
-#include "game.h"
-#include "points.h"
-#include "bullet.h"
+#include "headers/player.h"
+#include "headers/game.h"
+#include "headers/points.h"
+#include "headers/bullet.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <QBrush>
-#include "enemy.h"
+#include "headers/enemy.h"
 #include <QDebug>
 
 #define BORDER 300
@@ -21,15 +21,15 @@ extern Game *game;
 
 Player::Player() {
     //setBrush(QBrush(Qt::red, Qt::SolidPattern));
-    setPixmap(QPixmap(":/pictures/player.png"));
+    setPixmap(QPixmap("://pictures/png/player.png"));
     setPos(400, 520);
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
     shootSound = new QMediaPlayer();
-    shootSound->setMedia(QUrl("qrc:/sounds/shoot.mp3"));
+    shootSound->setMedia(QUrl("qrc://sounds/mp3/shoot.mp3"));
     shootSound->setVolume(10);
     eatSound = new QMediaPlayer();
-    eatSound->setMedia(QUrl("qrc:/sounds/eatsound.mp3"));
+    eatSound->setMedia(QUrl("qrc://sounds/mp3/eatsound.mp3"));
     eatSound->setVolume(10);
 }
 

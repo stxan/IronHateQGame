@@ -1,13 +1,13 @@
-#include "game.h"
+#include "headers/game.h"
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QFont>
-#include "enemy.h"
-#include "player.h"
-#include "health.h"
-#include "score.h"
+#include "headers/enemy.h"
+#include "headers/player.h"
+#include "headers/health.h"
+#include "headers/score.h"
 #include <QMediaPlayer>
-#include "points.h"
+#include "headers/points.h"
 
 int points_count = 0;
 
@@ -48,7 +48,7 @@ Game::Game(QWidget *parent){
     timer_enemy->start(10000);
 
     QMediaPlayer *music = new QMediaPlayer();
-    music->setMedia(QUrl("qrc:/sounds/background"));
+    music->setMedia(QUrl("qrc://sounds/mp3/background"));
     music->setVolume(50);
     music->play();
 

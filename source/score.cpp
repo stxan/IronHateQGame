@@ -1,4 +1,4 @@
-#include "score.h"
+#include "headers/score.h"
 #include <QFont>
 
 Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent){

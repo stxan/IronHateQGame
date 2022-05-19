@@ -1,10 +1,10 @@
-#include "bullet.h"
-#include "enemy.h"
+#include "headers/bullet.h"
+#include "headers/enemy.h"
 #include <QTimer>
 #include <QBrush>
 #include <QGraphicsScene>
 #include <QList>
-#include "game.h"
+#include "headers/game.h"
 #include <QDebug>
 
 extern Game *game;

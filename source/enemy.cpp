@@ -1,16 +1,16 @@
-#include "enemy.h"
+#include "headers/enemy.h"
 #include <QTimer>
 #include <QBrush>
 #include <QGraphicsScene>
 #include <stdlib.h>
-#include "game.h"
+#include "headers/game.h"
 
 extern Game *game;
 
 Enemy::Enemy() {
     int pos_x = rand() % 700;
     int pos_y = rand() % 500;
-    setPixmap(QPixmap(":/pictures/enemy.png"));
+    setPixmap(QPixmap("://pictures/png/enemy.png"));
     setPos(pos_x, pos_y);
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));

@@ -1,9 +1,9 @@
-#include "points.h"
+#include "headers/points.h"
 #include <QTimer>
 #include <QBrush>
 #include <QGraphicsScene>
 #include <stdlib.h>
-#include "game.h"
+#include "headers/game.h"
 
 extern Game *game;
 
@@ -15,7 +15,7 @@ Points::Points() {
     setBrush(QBrush(Qt::green, Qt::SolidPattern));
 
     points_spawn_sound = new QMediaPlayer();
-    points_spawn_sound->setMedia(QUrl("qrc:/sounds/spawn.mp3"));
+    points_spawn_sound->setMedia(QUrl("qrc://sounds/mp3/spawn.mp3"));
     points_spawn_sound->play();
 
 }
