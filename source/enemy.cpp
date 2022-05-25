@@ -7,9 +7,12 @@
 
 extern Game *game;
 
+#define RAND_INIT_X 700
+#define RAND_INIT_Y 500
+
 Enemy::Enemy() {
-    int pos_x = rand() % 700;
-    int pos_y = rand() % 500;
+    int pos_x = rand() % RAND_INIT_X;
+    int pos_y = rand() % RAND_INIT_Y;
     setPixmap(QPixmap("://pictures/png/enemy.png"));
     setPos(pos_x, pos_y);
     QTimer *timer = new QTimer();

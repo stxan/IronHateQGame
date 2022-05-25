@@ -7,6 +7,14 @@
 #include "headers/game.h"
 #include <QDebug>
 
+#define MOVE_OFFSET 10
+#define TIMER_PACE 50
+#define BULLET_SPAWN_X 13
+#define BULLET_SPAWN_Y 0
+#define BULLET_WIDTH 10
+#define BULLET_HEIGHT 10
+
+
 extern Game *game;
 
 enum direction {
@@ -14,20 +22,20 @@ enum direction {
 };
 
 Bullet::Bullet() {
-    setRect(13, 0, 10, 10);
+    setRect(BULLET_SPAWN_X, BULLET_SPAWN_Y, BULLET_WIDTH, BULLET_HEIGHT);
     setBrush(QBrush(Qt::yellow, Qt::SolidPattern));
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-    timer->start(50);
+    timer->start(TIMER_PACE);
 }
 
 Bullet::Bullet(int direction) {
     this->direction = direction;
-    setRect(13, 0, 10, 10);
+    setRect(BULLET_SPAWN_X, BULLET_SPAWN_Y, BULLET_WIDTH, BULLET_HEIGHT);
     setBrush(QBrush(Qt::yellow, Qt::SolidPattern));
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-    timer->start(50);
+    timer->start(TIMER_PACE);
 }
 
 void Bullet::move() {
@@ -43,17 +51,16 @@ void Bullet::move() {
         }
     }
     if (direction == UP) {
-        setPos(x(), y() - 10);
-       // qDebug() << "shoot up";
+        setPos(x(), y() - MOVE_OFFSET);
     }
     else if (direction == DOWN) {
-        setPos(x(), y() + 10);
+        setPos(x(), y() + MOVE_OFFSET);
     }
     else if (direction == LEFT) {
-        setPos(x() - 10, y());
+        setPos(x() - MOVE_OFFSET, y());
     }
     else if (direction == RIGHT) {
-        setPos(x() + 10, y());
+        setPos(x() + MOVE_OFFSET, y());
     }
    /* if (pos().y() + rect().height() < 0 || pos().y() - rect().height() > 600 || pos().x() + rect().width() < 0
             || pos().x() - rect().width() > 800) {

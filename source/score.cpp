@@ -1,12 +1,14 @@
 #include "headers/score.h"
 #include <QFont>
 
+#define TEXT_SIZE 16
+
 Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent){
     score = 0;
 
     setPlainText(QString("Score: ") + QString::number(score));
     setDefaultTextColor(Qt::blue);
-    setFont(QFont("times",16));
+    setFont(QFont("times", TEXT_SIZE));
 }
 
 void Score::increase(){
